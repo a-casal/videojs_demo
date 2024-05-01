@@ -1,0 +1,26 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <video id=example-video width=600 height=300 class="video-js vjs-default-skin" controls></video>
+        <script src="https://unpkg.com/video.js/dist/video.js"></script>
+
+        <!-- Dash.js -->
+
+        <!-- videojs-contrib-dash script -->
+        <script src="https://unpkg.com/videojs-contrib-dash/dist/videojs-dash.js"></script>
+
+        <script>
+        var player = videojs('example-video');
+
+        player.ready(function() {
+        player.src({
+            src: 'https://live-dev-cdn7-tve.cdn.viaplay.tv/vp/kanal6/kanal6.isml/index.mpd',
+            type: 'application/dash+xml'
+        });
+
+        player.play();
+        });
+        </script>
+    </body>
+</html>
